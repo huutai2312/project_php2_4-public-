@@ -2,7 +2,7 @@
     <footer class="footer__section bg__black">
         <div class="container-fluid">
             <div class="footer__bottom d-flex justify-content-between align-items-center">
-                <p class="copyright__content text-ofwhite m-0">Copyright © 2022 <a class="copyright__content--link" href="index.html">Suruchi</a> . All Rights Reserved.Design By Suruchi</p>
+                <p class="copyright__content text-ofwhite m-0"><a class="copyright__content--link" href="index.html">Suruchi</a> 2024</p>
                 
             </div>
         </div>

@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . '/public/router.php');
 require_once(__DIR__ . '/app/controller/index.php');
+// require_once(__DIR__ . '/app/controller/user.php');
 
 
 // auto loading
@@ -17,7 +18,11 @@ function model($className)
 $router = new Router();
 $router
     ->get('/', [Controller::class, 'index'])
-    ->get('/san-pham', [Controller::class, 'productDetail']);
+    ->get('/cua-hang', [Controller::class, 'cuahang'])
+    ->get('/san-pham', [Controller::class, 'productDetail'])
+    ->get('/tai-khoan', [Controller::class, 'indexUser'])
+    ->get('/login', [Controller::class, 'login'])
+    ->get('/register', [Controller::class, 'register']);
 
 echo $router->resolve(
     $_SERVER['REQUEST_URI'],

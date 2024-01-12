@@ -2,18 +2,6 @@
 
     <!-- Start breadcrumb section -->
     <section class="breadcrumb__section">
-        <div class="container">
-            <div class="row row-cols-1">
-                <div class="col">
-                    <div class="breadcrumb__content text-center section--padding">
-                        <ul class="breadcrumb__content--menu d-flex justify-content-center">
-                            <li class="breadcrumb__content--menu__items"><a class="text-black" href="/">Home</a></li>
-                            <li class="breadcrumb__content--menu__items"><span class="text-black">Product Details</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- End breadcrumb section -->
 
