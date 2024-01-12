@@ -1,19 +1,8 @@
 <?php
 require_once(__DIR__ . '/public/router.php');
 require_once(__DIR__ . '/app/controller/index.php');
-// require_once(__DIR__ . '/app/controller/user.php');
-
-
-// auto loading
-spl_autoload_register('model');
-function model($className)
-{
-    $path = "../asm/app/model/";
-    $extension = ".php";
-    $fullpath = $path . $className . $extension;
-    include_once($fullpath);
-}
-
+require_once realpath("vendor/autoload.php");
+use App\controller\Controller;
 
 $router = new Router();
 $router

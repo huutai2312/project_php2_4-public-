@@ -1,5 +1,4 @@
 <main class="main__content_wrapper">
-
     <!-- Start breadcrumb section -->
     <section class="breadcrumb__section">
     </section>
@@ -43,7 +42,7 @@
                             </div>
                             <p class="product__details--info__desc mb-15">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.</p>
                             <div class="product__variant">
-                                <div class="product__variant--list quantity d-flex align-items-center mb-20">
+                                <!-- <div class="product__variant--list quantity d-flex align-items-center mb-20">
                                     <div class="quantity__box">
                                         <button type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>
                                         <label>
@@ -51,10 +50,12 @@
                                         </label>
                                         <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
                                     </div>
-                                    <button class="quickview__cart--btn primary__btn" type="submit">Add To Cart</button>
-                                </div>
+                                </div> -->
                             </div>
+                            <button class="quickview__cart--btn primary__btn" type="submit">Add To Cart</button>
                         </form>
+                        <hr>
+                        <p>ID Product: <?php echo $productDetail['id'] ?></p>
                     </div>
                 </div>
             </div>

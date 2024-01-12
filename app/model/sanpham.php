@@ -1,4 +1,6 @@
 <?php
+namespace App\model;
+use PDO;
 class SanPham
 {
     private $db;

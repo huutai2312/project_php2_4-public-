@@ -1,6 +1,10 @@
 <?php
+namespace App\controller;
+use App\model\SanPham;
+
 class Controller
 {
+    // Start import header, footer
     public function importHeader()
     {
         include_once "../asm/app/view/inc/header.php";
@@ -10,6 +14,8 @@ class Controller
     {
         include_once "../asm/app/view/inc/footer.php";
     }
+    // End import header, footer
+
     public function index()
     {
         $this->importHeader();
@@ -31,28 +37,30 @@ class Controller
         }
         $this->importFooter();
     }
-    
-    public function cuahang(){
+
+    public function cuahang()
+    {
         $this->importHeader();
         $sanPhamModel = new SanPham();
         $products = $sanPhamModel->getAllProducts();
         include "../asm/app/view/cua-hang.php";
         $this->importFooter();
     }
-    
-    public function indexUser(){
+
+    public function indexUser()
+    {
         $this->importHeader();
         include "../asm/app/view/tai-khoan.php";
         $this->importFooter();
     }
-    
+
     public function login()
     {
         $this->importHeader();
         include "../asm/app/view/login.php";
         $this->importFooter();
     }
-    
+
     public function register()
     {
         $this->importHeader();

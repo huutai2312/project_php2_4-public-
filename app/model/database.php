@@ -1,4 +1,7 @@
 <?php 
+namespace App\model;
+use PDO;
+use PDOException;
 class database{
    private $servername = "localhost";
    private $username="root";
@@ -16,4 +19,5 @@ class database{
     }
     return $conn;
     }
+    
 }
