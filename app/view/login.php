@@ -8,7 +8,7 @@
     <!-- Start login section  -->
     <div class="login__section section--padding">
         <div class="container">
-            <form action="#">
+            <form action="/login_info" method="post">
                 <div class="login__section--inner">
                     <div class="row row-cols-md-1 row-cols-1">
                         <div class="col">
@@ -18,8 +18,8 @@
                                     <p class="account__login--header__desc">Login if you area a returning customer.</p>
                                 </div>
                                 <div class="account__login--inner">
-                                    <input class="account__login--input" placeholder="Email Addres" type="text">
-                                    <input class="account__login--input" placeholder="Password" type="password">
+                                    <input class="account__login--input" placeholder="Email" type="email" name="email">
+                                    <input class="account__login--input" placeholder="Password" type="password" name="password">
                                     <div class="account__login--remember__forgot mb-15 d-flex justify-content-between align-items-center">
                                         <!-- <button class="account__login--forgot" type="submit">Forgot Your Password?</button> -->
                                     </div>

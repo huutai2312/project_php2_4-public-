@@ -11,7 +11,10 @@ $router
     ->get('/san-pham', [Controller::class, 'productDetail'])
     ->get('/tai-khoan', [Controller::class, 'indexUser'])
     ->get('/login', [Controller::class, 'login'])
-    ->get('/register', [Controller::class, 'register']);
+    ->post('/login_info', [Controller::class, 'login_info'])
+    ->get('/register', [Controller::class, 'register'])
+    ->post('/register', [Controller::class, 'registerUser']);
+
 
 echo $router->resolve(
     $_SERVER['REQUEST_URI'],
