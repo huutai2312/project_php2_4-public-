@@ -1,7 +1,5 @@
 <?php
-
 namespace App\model;
-
 use PDO;
 
 class User
@@ -18,18 +16,17 @@ class User
         return $this->db->connection_database();
     }
 
-    // public function getAllProducts()
-    // {
-    //     $conn = $this->getConnection();
+    public function getUserByEmail($email)
+    {
+        $conn = $this->getConnection();
 
-    //     $query = "SELECT * FROM ps_products";
-    //     $stmt = $conn->prepare($query);
-    //     $stmt->execute();
+        $query = "SELECT * FROM ps_user WHERE email = :email";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
 
-    //     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //     return $result;
-    // }
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
     public function registerUser($name, $email, $password)
     {
@@ -47,8 +44,8 @@ class User
 
         // Thực thi câu truy vấn
         $stmt->execute();
-        
+
         header("Location: /?registerSuccess=1");  // Điều hướng về địa chỉ trang home với tham số query "success=1"
-    exit();  // Đảm bảo dừng kịch bản ngay sau lệnh chuyển hướng
+        exit();  // Đảm bảo dừng kịch bản ngay sau lệnh chuyển hướng
     }
 }

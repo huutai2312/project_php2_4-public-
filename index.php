@@ -9,12 +9,12 @@ $router
     ->get('/', [Controller::class, 'index'])
     ->get('/cua-hang', [Controller::class, 'cuahang'])
     ->get('/san-pham', [Controller::class, 'productDetail'])
-    ->get('/tai-khoan', [Controller::class, 'indexUser'])
+    ->get('/tai-khoan', [Controller::class, 'taikhoan'])
     ->get('/login', [Controller::class, 'login'])
-    ->post('/login_info', [Controller::class, 'login_info'])
+    ->post('/loginUser', [Controller::class, 'loginUser'])
     ->get('/register', [Controller::class, 'register'])
-    ->post('/register', [Controller::class, 'registerUser']);
-
+    ->post('/register', [Controller::class, 'registerUser'])
+    ->get('/logout', [Controller::class, 'logout']);
 
 echo $router->resolve(
     $_SERVER['REQUEST_URI'],
@@ -22,4 +22,3 @@ echo $router->resolve(
     // Truyền giá trị $product_id nếu có
     isset($_GET['id']) ? $_GET['id'] : null
 );
-

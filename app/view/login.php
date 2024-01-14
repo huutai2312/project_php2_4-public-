@@ -1,14 +1,11 @@
 <main class="main__content_wrapper">
-
-    <!-- Start breadcrumb section -->
     <section class="breadcrumb__section">
     </section>
-    <!-- End breadcrumb section -->
 
     <!-- Start login section  -->
     <div class="login__section section--padding">
         <div class="container">
-            <form action="/login_info" method="post">
+            <form action="/loginUser" method="post">
                 <div class="login__section--inner">
                     <div class="row row-cols-md-1 row-cols-1">
                         <div class="col">
@@ -16,6 +13,11 @@
                                 <div class="account__login--header mb-25">
                                     <h2 class="account__login--header__title h3 mb-10">Login</h2>
                                     <p class="account__login--header__desc">Login if you area a returning customer.</p>
+                                    <?php
+                                    if (isset($_GET['loginFailed']) && $_GET['loginFailed'] == 1) {
+                                        echo '<div class="alert alert-danger" role="alert">Thông tin đăng nhập không đúng. Vui lòng thử lại!</div>';
+                                    }
+                                    ?>
                                 </div>
                                 <div class="account__login--inner">
                                     <input class="account__login--input" placeholder="Email" type="email" name="email">
