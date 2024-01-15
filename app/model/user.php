@@ -32,7 +32,6 @@ class User
     {
         $conn = $this->getConnection();
 
-        // Thực hiện câu truy vấn để thêm thông tin người dùng vào cơ sở dữ liệu
         $query = "INSERT INTO ps_user (name, email, password, address, phone, is_admin) VALUES (:name, :email, :password, :address, :phone, :is_admin)";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
@@ -42,10 +41,9 @@ class User
         $stmt->bindValue(':phone', '0', PDO::PARAM_STR);
         $stmt->bindValue(':is_admin', '0', PDO::PARAM_STR);
 
-        // Thực thi câu truy vấn
         $stmt->execute();
 
-        header("Location: /?registerSuccess=1");  // Điều hướng về địa chỉ trang home với tham số query "success=1"
-        exit();  // Đảm bảo dừng kịch bản ngay sau lệnh chuyển hướng
+        header("Location: /?registerSuccess=1"); 
+        exit();
     }
 }

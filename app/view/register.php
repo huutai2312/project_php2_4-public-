@@ -24,12 +24,6 @@
                                             echo '<div class="alert alert-danger" role="alert">Mật khẩu và xác nhận mật khẩu không khớp!</div>';
                                         } elseif ($_GET['registerFailed'] == 3) {
                                             echo '<div class="alert alert-danger" role="alert">Email đã được sử dụng, vui lòng chọn email khác!</div>';
-                                        } elseif ($_GET['registerFailed'] == 1 && $_GET['registerFailed'] == 3) {
-                                            echo '<div class="alert alert-danger" role="alert">Vui lòng điền đầy đủ thông tin và đổi email khác!</div>';
-                                        } elseif ($_GET['registerFailed'] == 1 && $_GET['registerFailed'] == 2) {
-                                            echo '<div class="alert alert-danger" role="alert">Vui lòng điền đầy đủ thông tin và mật khẩu phải giống nhau!</div>';
-                                        } elseif ($_GET['registerFailed'] == 2 && $_GET['registerFailed'] == 3) {
-                                            echo '<div class="alert alert-danger" role="alert">Vui lòng điền mật khẩu giống nhau và đổi email khác!</div>';
                                         }
                                     }
                                     ?>

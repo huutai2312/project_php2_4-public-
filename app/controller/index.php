@@ -83,16 +83,13 @@ class Controller
     public function loginUser()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Nhận thông tin đăng nhập từ form
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
 
-            // Thực hiện kiểm tra đăng nhập ở đây
             $userModel = new User();
             $user = $userModel->getUserByEmail($email);
 
             if ($user && password_verify($password, $user['password'])) {
-                // Đăng nhập thành công, lưu thông tin người dùng vào session
                 session_start();
                 $_SESSION['user'] = $user;
 
@@ -100,7 +97,6 @@ class Controller
                 header("Location: /?loginSuccess=1");
                 exit();
             } else {
-                // Đăng nhập không thành công, hiển thị cảnh báo
                 // echo "<script>alert('Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.');</script>";
                 header("Location: /login?loginFailed=1");
                 exit();
@@ -118,15 +114,11 @@ class Controller
     public function registerUser()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Kiểm tra và xử lý thông tin đăng ký từ form
             $name = $_POST['name'] ?? '';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
             $confirmPassword = $_POST['confirm_password'] ?? '';
 
-            // Thực hiện các kiểm tra và xử lý đăng ký ở đây
-
-            // Ví dụ: Kiểm tra rỗng
             if (empty($name) || empty($email) || empty($password) || empty($confirmPassword)) {
                 header("Location: /register?registerFailed=1");
                 exit();
@@ -149,7 +141,6 @@ class Controller
                 // return;
             }
 
-            // Hash mật khẩu trước khi lưu vào cơ sở dữ liệu
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             // Thêm thông tin người dùng vào cơ sở dữ liệu
